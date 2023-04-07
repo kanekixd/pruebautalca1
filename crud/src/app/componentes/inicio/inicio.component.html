@@ -1,0 +1,35 @@
+
+<div class="container">
+  <h2>Lista de usuarios</h2>
+  <div style="display: flex; justify-content: flex-end;">
+    <button type="button" routerLink="/add" class="btn btn-success">Agregar</button>
+  </div> 
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Contraseña</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Dehabilitar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let Usuario of ListarU">
+            <td>{{Usuario.idusuarios}}</td>
+            <td>{{Usuario.nombre}}</td>
+            <td>{{Usuario.email}}</td>
+            <td>{{Usuario.contrasena}}</td>
+            <td>{{Usuario.tipo}}</td>
+            <td>
+                <button (click)="modificar(Usuario.idusuarios)"  type="button" class="btn btn-primary">Editar</button>
+            </td>
+            <td>
+                <button (click)="deshabilitar(Usuario.idusuarios)" type="button" class="btn btn-warning">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
